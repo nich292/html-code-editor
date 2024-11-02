@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>404 - Not Found</title>
+    <link rel="manifest" href="https://nich292.github.io/html-code-editor/manifest.json">
+    <link rel="icon" href="https://nich292.github.io/html-code-editor/Icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'League Spartan', sans-serif;
+            background-color: #f4f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .logo-container h1 {
+            font-size: 22px;
+            margin: 0;
+            color: #000000;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 120px;
+            margin: 0;
+            color: #007bff;
+            animation: pop 0.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #333;
+            margin: 10px 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://nich292.github.io/html-code-editor/Icon.png" alt="icon">
+            <h1>NetDig™ Code Editor</h1>
+        </div>
+    </header>
+    <main>
+        <h1>404</h1>
+        <h2>Page Not Found!</h2>
+        <h3>Sorry, the page you are looking for doesn’t exist.</h3>
+        <a href="https://nich292.github.io/html-code-editor">Back to NetDig™ Code Editor Homepage</a>
+    </main>
+</body>
+<script>
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('https://nich292.github.io/html-code-editor/sw.js')
+            .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
+</script>
+</html>

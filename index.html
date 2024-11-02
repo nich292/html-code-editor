@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>NetDig™ Code Editor</title>
+    <link rel="manifest" href="https://nich292.github.io/html-code-editor/manifest.json">
+    <link rel="icon" href="https://nich292.github.io/html-code-editor/Icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'League Spartan', sans-serif;
+            background-color: #f4f7fa;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .logo-container h1 {
+            font-size: 22px;
+            margin: 0;
+            color: #000000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px; 
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007bff;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+
+        nav ul li h4 {
+            margin: 0;
+            color: #007bff;
+            font-size: 18px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .intro-text h2 {
+            font-size: 32px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .intro-text p {
+            font-size: 18px;
+            color: #555;
+            max-width: 600px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 40px 0;
+            width: 100%;
+            align-items: center;
+        }
+
+        .feature {
+            flex: 1;
+            max-width: 300px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature h3 {
+            font-size: 22px;
+            color: #333;
+            margin-top: 15px;
+        }
+
+        .feature p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .features img {
+            width: 600px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        #get-started-button {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        #get-started-button:hover {
+            background-color: #0056b3;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" style="text-decoration: none;"> 
+            <div class="logo-container">
+                <img src="https://nich292.github.io/html-code-editor/Icon.png" alt="icon">
+                <h1>NetDig™ Code Editor</h1>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="https://nich292.github.io/html-code-editor/status.html">Status</a></li>
+                <li><a href="https://github.com/nich292/html-code-editor">View Repository</a></li>
+                <li><h4>HTML Code Editor</h4></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="intro-text">
+            <h2>Build and Code With Ease.</h2>
+            <p>Welcome to NetDig™ Code Editor, where you can write and preview HTML code in real-time both online and offline (Available only if Service Worker has cached the page beforehand). No installations required—just start coding right from your browser.</p>
+        </div>
+
+        <div class="features">
+          <img src="https://nich292.github.io/html-code-editor/Screenshot.png" alt="Code Editor" class="center">
+            <div class="feature">
+                <h3>Real-Time Preview</h3>
+                <p>Instantly see your code changes reflected in the live preview pane without reloading the page.</p>
+            </div>
+          
+            <div class="feature">
+                <h3>No Setup Required</h3>
+                <p>Start coding immediately. No need to configure anything—just open your browser and go!</p>
+            </div>
+
+            <div class="feature">
+                <h3>Code Download</h3>
+                <p>With a single click, you can save your HTML code to your device.</p>
+            </div>
+        </div>
+
+        <a id="get-started-button" href="https://nich292.github.io/html-code-editor/editor.html">Get Started</a>
+    </main>
+    <footer>
+        <p>© 2024 The NetDig™ Software Project Authors. All rights reserved.</p>
+        <p>NetDig™ Code Editor is licensed under the <a href="https://nich292.github.io/html-code-editor/LICENSE.txt">NetDig™ Software License Version 3.0</a>.</p>
+    </footer>
+</body>
+<script>
+    if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('https://nich292.github.io/html-code-editor/sw.js')
+            .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
+</script>
+</html>

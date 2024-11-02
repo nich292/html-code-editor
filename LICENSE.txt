@@ -1,0 +1,74 @@
+NetDig™ Software License
+Version 3.0, 29 October 2024
+Copyright © 2024 NetDig™ Software License Authors. All rights reserved.
+
+Permission is granted to distribute this document, but modifications are prohibited. This document is provided "as is." 
+NetDig™ Software License Authors shall not be liable for any damages or losses resulting from the use of this document.
+The NetDig™ Software License Authors are not a law firm and do not provide legal services.
+
+TERMS AND CONDITIONS
+
+1. Definitions.
+"Licensor" refers to the legal entity that owns the copyright to the Software.
+"License" refers to this document. 
+"You" refers to the individual or entity adhering to this License.
+"Software" refers to the work licensed by this document.
+
+2. Grant of Rights.
+The Licensor grants you a worldwide, royalty-free, non-exclusive, non-assignable license to:
+
+a)  Use the Software for any purpose, including commercial use.               
+b)  Reproduce, distribute, and modify the Software, including the right to create derivative works,
+    provided that all copies and substantial portions of the Software includes proper attribution to the Licensor.
+c)  Distribute modified versions of the Software under the same terms as this License.
+
+3. Patent Rights.
+No patent rights are granted under this License.
+Any use of patented technology within the Software requires a separate agreement with the Licensor.
+
+4. Trademarks and Branding.
+The Licensor retains ownership of all trademarks and branding associated with the Software.
+You may not use any of these trademarks or branding without prior written permission from the Licensor,
+except when required for proper attribution.
+
+5. Contributions.
+You are permitted to contribute to the Software.
+By doing so, you agree to grant the Licensor a non-exclusive, worldwide, royalty-free license to use, distribute, 
+and modify your contributions under the same terms as this License.
+
+6. Distributions.
+You are permitted to distribute the Software and derivative works, 
+provided that all copies and substantial portions of the Software are distributed under this License. 
+Any sublicensing or distribution of the Software must include this License and a copy of the copyright notice.
+
+7. Warranty Disclaimer.
+The Software is provided "as is", without warranties of any kind, express or implied. 
+The Licensor is not responsible for any damages, losses, or other issues arising from the use or inability to use the Software.
+
+8. Limitation of Liability.
+In no event shall the Licensor be liable for any indirect, incidental, special, or consequential damages,
+or for any loss of profits or data, even if advised of the possibility of such damages.
+
+9. Termination.
+This License is effective until terminated.
+You may terminate it at any time by ceasing all use of the Software and destroying all copies in your possession. 
+The Licensor may terminate this License if you fail to comply with any of its terms and conditions. 
+Upon termination, you must stop using the Software and destroy all copies.
+
+10. Governing Law.
+This License is governed by the applicable laws, without regard to its conflict of law principles.
+
+END OF TERMS AND CONDITIONS
+
+HOW TO APPLY THIS LICENSE TO YOUR SOFTWARE
+
+To apply this license to your software, copy the template below and paste it in a LICENSE.txt file, 
+or in the source code of the software:
+
+Copyright © [Year] [Copyright Holder]
+[Software Name]
+This software is licensed under the NetDig™ Software License Version 3.0. 
+You are permitted to use this file provided you comply with its terms and conditions, as outlined in Sections 1 to 10 of the license.
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. 
+IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY DAMAGES OR LOSSES ARISING FROM THE USE OF THE SOFTWARE, EXCEPT AS REQUIRED BY LAW.
+NOTE THAT ONLY THE FULL LICENSE TEXT IS LEGALLY BINDING.

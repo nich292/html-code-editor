@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>NetDig™ Code Editor</title>
+    <link rel="manifest" href="https://nich292.github.io/html-code-editor/manifest.json">
+    <link rel="icon" href="https://nich292.github.io/html-code-editor/Icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'League Spartan', sans-serif;
+            background-color: #f4f7fa;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .logo-container h1 {
+            font-size: 22px;
+            margin: 0;
+            color: #000000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007bff;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+        nav ul li h4 {
+            margin: 0;
+            color: #007bff;
+            font-size: 18px;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+        .editor-container {
+            display: flex;
+            flex: 1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .code-editor, .live-preview {
+            flex: 1;
+            padding: 15px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .code-editor {
+            background-color: #f7f7f7;
+            border-right: 1px solid #ccc;
+        }
+        .live-preview {
+            background-color: #fff;
+        }
+        .live-preview iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 5px;
+        }
+        .editor-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        #code {
+            width: 100%;
+            height: calc(100% - 40px);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            resize: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+            background-color: #f7f7f7;
+            padding: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://nich292.github.io/html-code-editor/" style="text-decoration: none;"> 
+            <div class="logo-container">
+                <img src="https://nich292.github.io/html-code-editor/Icon.png" alt="icon">
+                <h1>NetDig™ Code Editor</h1>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="https://nich292.github.io/html-code-editor/status.html">Status</a></li>
+                <li><a href="https://github.com/nich292/html-code-editor">View Repository</a></li>
+                <li><h4>HTML Code Editor</h4></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="editor-container">
+            <div class="code-editor">
+                <h2 class="editor-title">Code Editor</h2>
+                <textarea id="code" placeholder="Write your HTML code here..."></textarea>
+            </div>
+            <div class="live-preview">
+                <h2 class="editor-title">Live Preview</h2>
+                <iframe id="preview"></iframe>
+            </div>
+        </div>
+        <a id="download-button" class="button" href="#" download="index.html">Download HTML Code</a>
+    </main>
+    <script>
+        const codeInput = document.getElementById('code');
+        const previewFrame = document.getElementById('preview');
+        let isFormDirty = false;
+
+        codeInput.addEventListener('input', () => {
+            isFormDirty = true;
+            runCode();
+        });
+
+        const runCode = () => {
+            const code = codeInput.value;
+            const doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            doc.open();
+            doc.write(code);
+            doc.close();
+        };
+
+        const downloadButton = document.getElementById('download-button');
+        downloadButton.addEventListener('click', () => {
+            const code = codeInput.value;
+            const blob = new Blob([code], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            downloadButton.href = url;
+        });
+
+        window.addEventListener('beforeunload', (event) => {
+            if (isFormDirty) {
+                const message = "Changes that you made may not be saved.";
+                event.returnValue = message;
+                return message;
+            }
+        });
+
+        if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('https://nich292.github.io/html-code-editor/sw.js')
+            .then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+    });
+}
+    </script>
+</body>
+</html>

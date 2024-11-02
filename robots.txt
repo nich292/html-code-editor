@@ -1,0 +1,24 @@
+User-agent: *
+Crawl-delay: 15
+Disallow: /html-code-editor/404.html
+Disallow: /html-code-editor/status.html
+Disallow: /html-code-editor/LICENSE.txt
+Disallow: /html-code-editor/Icon.png
+Disallow: /html-code-editor/Screenshot.png
+
+User-agent: Googlebot
+Crawl-delay: 10
+
+User-agent: Bingbot
+Crawl-delay: 5
+
+User-agent: Slurp
+Crawl-delay: 5
+
+User-agent: DuckDuckBot
+Crawl-delay: 10
+
+User-agent: Baiduspider
+Crawl-delay: 15
+
+Sitemap: https://nich292.github.io/html-code-editor/sitemap.xml

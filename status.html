@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>NetDig™ Code Editor Status</title>
+    <link rel="manifest" href="https://nich292.github.io/html-code-editor/manifest.json">
+    <link rel="icon" href="https://nich292.github.io/html-code-editor/Icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'League Spartan', sans-serif;
+            background-color: #f4f7fa;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-container img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .logo-container h1 {
+            font-size: 22px;
+            margin: 0;
+            color: #000000;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #007bff;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #0056b3;
+        }
+        nav ul li h4 {
+            margin: 0;
+            color: #007bff;
+            font-size: 18px;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .status-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .status-icon img {
+            width: 48px;
+            height: 48px;
+        }
+        .status-text.up {
+            color: green;
+        }
+        .status-text.down {
+            color: red;
+        }
+        .last-checked {
+            font-size: 0.9em;
+            color: #555;
+            margin: 10px 0;
+        }
+        .report-button {
+            font-family: 'League Spartan', sans-serif;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .report-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .page-status {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            width: 100%;
+        }
+        .page-status-item {
+            flex: 1 1 45%;
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .page-status-item h2 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .page-status-item .status-icon img {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://nich292.github.io/html-code-editor/" style="text-decoration: none;">
+            <div class="logo-container">
+                <img src="https://nich292.github.io/html-code-editor/Icon.png" alt="icon">
+                <h1>NetDig™ Code Editor</h1>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="https://nich292.github.io/html-code-editor/status.html">Status</a></li>
+                <li><a href="https://github.com/nich292/html-code-editor">View Repository</a></li>
+                <li><h4>HTML Code Editor</h4></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>NetDig™ Code Editor Status</h1>
+        <div class="status-container">
+            <span class="status-icon" id="status-icon"></span>
+            <p class="status-text" id="status">Checking status...</p>
+        </div>
+        <p class="last-checked" id="last-checked">Last checked: Just now</p>
+        <div class="page-status">
+            <div class="page-status-item" id="homepage-status">
+                <h2>Homepage</h2>
+                <span class="status-icon" id="homepage-icon"></span>
+                <h2 class="status-text" id="homepage-status-text">Checking homepage status...</h2>
+            </div>
+            <div class="page-status-item" id="editor-status">
+                <h2>Editor Page</h2>
+                <span class="status-icon" id="editor-icon"></span>
+                <h2 class="status-text" id="editor-status-text">Checking editor status...</h2>
+            </div>
+        </div>
+        <button class="report-button" onclick="window.open('https://github.com/nich292/html-code-editor/issues', '_blank')">
+            Report an Issue
+        </button>
+    </main>
+
+    <footer>
+        <p>© 2024 The NetDig™ Software Project Authors. All rights reserved.</p>
+        <p>NetDig™ Code Editor is licensed under the <a href="https://nich292.github.io/html-code-editor/LICENSE.txt">NetDig™ Software License Version 3.0</a>.</p>
+    </footer>
+
+    <script>
+        async function checkPageStatus(url, iconId, statusTextId) {
+            const iconEl = document.getElementById(iconId);
+            const statusTextEl = document.getElementById(statusTextId);
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    statusTextEl.textContent = "Operational";
+                    statusTextEl.classList.add("up");
+                    statusTextEl.classList.remove("down");
+                    iconEl.innerHTML = "<img src='https://nich292.github.io/html-code-editor/operational.png' alt='Operational'>";
+                    return true;
+                } else {
+                    statusTextEl.textContent = "Outage";
+                    statusTextEl.classList.add("down");
+                    statusTextEl.classList.remove("up");
+                    iconEl.innerHTML = "<img src='https://nich292.github.io/html-code-editor/outage.png' alt='Outage'>";
+                    return false;
+                }
+            } catch (error) {
+                statusTextEl.textContent = "Outage";
+                statusTextEl.classList.add("down");
+                statusTextEl.classList.remove("up");
+                iconEl.innerHTML = "<img src='https://nich292.github.io/html-code-editor/outage.png' alt='Outage'>";
+                return false;
+            }
+        }
+
+        async function checkStatus() {
+            const statusEl = document.getElementById("status");
+            const statusIcon = document.getElementById("status-icon");
+            const lastCheckedEl = document.getElementById("last-checked");
+            const now = new Date().toLocaleTimeString();
+            const homepageStatus = await checkPageStatus("https://nich292.github.io/html-code-editor/index.html", "homepage-icon", "homepage-status-text");
+            const editorStatus = await checkPageStatus("https://nich292.github.io/html-code-editor/editor.html", "editor-icon", "editor-status-text");
+            if (homepageStatus && editorStatus) {
+                statusEl.textContent = "All systems are operational";
+                statusEl.classList.add("up");
+                statusEl.classList.remove("down");
+                statusIcon.innerHTML = "<img src='https://nich292.github.io/html-code-editor/operational.png' alt='Operational'>";
+            } else {
+                statusEl.textContent = "System Outage";
+                statusEl.classList.add("down");
+                statusEl.classList.remove("up");
+                statusIcon.innerHTML = "<img src='https://nich292.github.io/html-code-editor/outage.png' alt='Outage'>";
+            }
+            lastCheckedEl.textContent = `Last checked: ${now}`;
+        }
+
+        checkStatus();
+        setInterval(checkStatus, 60000);
+    </script>
+</body>
+</html>
